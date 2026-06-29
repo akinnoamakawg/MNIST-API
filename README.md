@@ -1,1 +1,1 @@
-# API-de-reconnaissance-manuscrite-avec-PyTorch-et-file-d-inf-rence-FastAPI-
+# API-de-reconnaissance-manuscrite-avec-PyTorch-et-file-d'inférence(FastAPI)
