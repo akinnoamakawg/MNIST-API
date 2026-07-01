@@ -1,0 +1,23 @@
+# Fichiers de cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers de couverture et de tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Données locales et images temporaires de test
+data/
+test_mnist_bench.png
+
+# Modèles et poids lourds (PyTorch / Deep Learning)
+*.pt
+*.pth
+modele/*.pth
+modele/*.pt
+
+# Variables d'environnement / Secrets
+.env

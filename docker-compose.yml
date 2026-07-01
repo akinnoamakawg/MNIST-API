@@ -1,0 +1,27 @@
+services:
+  # le service Redis
+  redis:
+    image: redis:7-alpine
+    container_name: mnist_redis
+    ports: ["6379:6379"]
+
+  # API FastAPI
+  api:
+    build: .
+    container_name: mnist_api
+    command: uvicorn main_batch:app --host 0.0.0.0 --port 8000
+    ports: ["8000:8000"]
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  # Le worker de batching
+  worker:
+    build: .
+    container_name: mnist_worker
+    command: python3 worker_batch.py
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
